@@ -1,0 +1,2 @@
+<div *ngFor="let alert of alerts" class="alert" [ngClass]="{ 'alert': alert, 'alert-success': alert.type === 'success', 'alert-danger': alert.type === 'error' }">{{alert.text}}<i class="fa fa-times fa-lg" aria-hidden="true" (click)=close()> </i></div>
+

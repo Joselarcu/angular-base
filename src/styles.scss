@@ -6,3 +6,17 @@
 .control-group {
     padding-top: 15px;
 }
+
+.alert {
+    position: relative;
+    float: right;
+    margin-right: 5px;
+    margin-top: 5px;
+    width: 360px;
+
+    i {
+        position: absolute;
+        right: 6px;
+        top: 6px;
+    }
+}

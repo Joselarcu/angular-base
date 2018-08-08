@@ -4,6 +4,14 @@
 
 export const environment = {
   production: false,
+  authConfig: {
+    clientID: 'B0v5A7RALdrX8zZPLE5VHxiRBNNpAam7',
+    domain: 'jvlara-base.eu.auth0.com',
+    responseType: 'token id_token',
+    audience: 'https://jvlara-base.eu.auth0.com/userinfo',
+    redirectUri: 'http://localhost:3000/callback',
+    scope: 'openid profile'
+  }
 };
 
 /*

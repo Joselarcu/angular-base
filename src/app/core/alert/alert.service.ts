@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import { AlertType } from '../../models/alert-type';
 
 @Injectable()
 export class AlertService {
@@ -23,13 +24,16 @@ export class AlertService {
   }
 
   success(message: string, keepAfterNavigationChange = false) {
-    this.keepAfterNavigationChange = keepAfterNavigationChange;
-    this.subject.next({ type: 'success', text: message });
+    this.alert(AlertType.Success,message, keepAfterNavigationChange);
   }
 
   error(message: string, keepAfterNavigationChange = false) {
+    this.alert(AlertType.Error, message, keepAfterNavigationChange);
+  }
+
+  alert(type: AlertType, message: string, keepAfterNavigationChange = false){
     this.keepAfterNavigationChange = keepAfterNavigationChange;
-    this.subject.next({ type: 'error', text: message });
+    this.subject.next({ type: type, text: message });
   }
 
   getMessage(): Observable<any> {

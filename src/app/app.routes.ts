@@ -1,11 +1,12 @@
-import { CreateUserComponent } from './user/create-user/create-user.component';
+import { MessagesComponent } from './messages/messages.component';
+import { CallbackComponent } from './shared/callback/callback.component';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './core/authentication/auth.guard';
 
 
 const APP_ROUTES: Routes = [
-    { path: 'login', component: LoginComponent },
-    { path: 'signup', component: CreateUserComponent }
+    { path: 'callback', component: CallbackComponent },
+    { path: 'messages', component: MessagesComponent, canActivate: [AuthGuard]}
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);
